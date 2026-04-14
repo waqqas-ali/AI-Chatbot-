@@ -1,27 +1,3 @@
-// import { StatusBar } from 'expo-status-bar';
-// import { StyleSheet, Text, View } from 'react-native';
-
-// export default function App() {
-//   return (
-//     <View style={styles.container}>
-//       <Text>Open up App.js to start working on your app!</Text>
-//       <StatusBar style="auto" />
-//     </View>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
-
-
-
-
 // import React from 'react'
 // import AppNavigation from './src/navigation/AppNavigation'
 
@@ -54,7 +30,7 @@ import { OpenAI } from "openai";
 // 🔑 Setup AI Client
 const client = new OpenAI({
   baseURL: "https://router.huggingface.co/v1",
-  apiKey: "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", // 👉 PUT YOUR TOKEN HERE
+  apiKey: process.env.EXPO_PUBLIC_AI_KEY, // 👉 PUT YOUR TOKEN HERE
   defaultHeaders: {
     "Content-Type": "application/json",
   },
@@ -266,3 +242,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 });
+
+
+
+
+
