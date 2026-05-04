@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "AI-Chatbot",
+    "jsEngine": "hermes",
     "slug": "AI-Chatbot",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -30,6 +31,9 @@
       "eas": {
         "projectId": "c5f0ca13-dbe1-4ad9-85c9-8397d89c6335"
       }
-    }
+    },
+    "plugins": [
+      "expo-audio"
+    ]
   }
 }
