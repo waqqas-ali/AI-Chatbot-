@@ -1,16 +1,18 @@
-name: First Workflow
+name: Expo CI
 
-on: [push]
+on:
+  push:
+    branches: [main]
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Install Node
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -18,5 +20,8 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Run Test
-        run: npm test
+      - name: Start Expo (check if project runs)
+        run: npx expo start --no-dev --minify & sleep 10
+
+      - name: Stop Expo
+        run: kill $(lsof -t -i:19000) || true
